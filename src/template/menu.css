@@ -3,8 +3,23 @@
     width: 90vw;
     background-color:rgb(37, 36, 36) ;
     border-radius: 0.6rem;
+    justify-content: left !important;
 }
 
-.navbar-brand {
-    color: tomato;
+.nav-link {
+    color: rgb(240, 235, 235);
+}
+
+.nav-link:hover {
+    color:  rgb(194, 191, 191);
+}
+
+.nav-title {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.nav-title h1 {
+    margin-left: 15px !important;
 }

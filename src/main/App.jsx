@@ -1,11 +1,14 @@
 import React from 'react';
-import 'font-awesome';
-import 'bootstrap'
+import Todo from '../todo/todo'
+import Menu from '../template/menu'
+//import 'font-awesome'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App(props) {
   return (
     <div className="App">
-        <h1>Teste</h1>
+        <Menu />
+        <Todo />
     </div>
   );
 }

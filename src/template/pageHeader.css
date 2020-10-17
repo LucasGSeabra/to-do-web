@@ -1,0 +1,12 @@
+.page-header {
+    width: 90vw;
+    margin-top: 5vh;
+    margin-bottom: 3vh;
+    border-bottom: solid 1px !important;
+    border-color: rgba(173, 173, 173, 0.596) !important;
+}
+
+.page-header h2 {
+    margin-bottom: 2vh;
+    font-weight: bold;
+}

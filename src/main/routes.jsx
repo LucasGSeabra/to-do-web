@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router, Route, Redirect } from 'react-router'
+import { Route, Redirect } from 'react-router'
 import { HashRouter } from 'react-router-dom'
 
 import Todo from '../todo/todo'

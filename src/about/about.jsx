@@ -1,8 +1,16 @@
 import React from 'react'
+import PageHeader from '../template/pageHeader'
 
 function About(props) {
     return(
-        <h1>sobre</h1>
+        <div>
+            <PageHeader name='Sobre' small='nois'></PageHeader>
+            <h2>Nossa Historia</h2>
+            <p>uma caralhada de groselha uma caralhada de groselha
+                uma caralhada de groselha                 uma caralhada de groselha 
+                uma caralhada de groselha                 uma caralhada de groselha 
+            </p>
+        </div>
     )
 }
 

@@ -17,8 +17,11 @@ function Todo(props) {
     return (
         <div>
             <PageHeader name='Tarefas' small='Cadastro'></PageHeader>
-                <TodoForm></TodoForm>
-                <TodoList></TodoList>
+            <TodoForm 
+                description={description} 
+                handleChange={handleChange}
+                handleAdd={handleAdd}/>
+            <TodoList />
         </div>
     )
 }

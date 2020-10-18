@@ -10,8 +10,10 @@ function Todo(props) {
         setDescription(e.target.value)
     }
 
-export default class Todo extends Component {
-    render() {
+    function handleAdd() {
+        console.log('add')
+    }
+
     return (
         <div>
             <PageHeader name='Tarefas' small='Cadastro'></PageHeader>

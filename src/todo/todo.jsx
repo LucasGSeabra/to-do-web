@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import PageHeader from '../template/pageHeader'
 import TodoForm from './todoForm'
 import TodoList from './todoList'
+import axios from 'axios'
+
+const URL = 'http://localhost:3003/api/todos'
 
 function Todo(props) {
     const[description, setDescription] = useState('')
@@ -11,7 +14,8 @@ function Todo(props) {
     }
 
     function handleAdd() {
-        console.log('add')
+        axios.post(URL, { description })
+            .then(resp => console.log('Funcionou!'))
     }
 
     return (

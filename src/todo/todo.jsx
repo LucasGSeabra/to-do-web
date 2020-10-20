@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import PageHeader from '../template/pageHeader'
 import TodoForm from './todoForm'
 import TodoList from './todoList'
@@ -8,6 +8,7 @@ const URL = 'http://localhost:3003/api/todos'
 
 function Todo(props) {
     const[description, setDescription] = useState('')
+    const[list, setList] = useState([])
 
     function handleChange(e) {
         setDescription(e.target.value)
@@ -15,8 +16,21 @@ function Todo(props) {
 
     function handleAdd() {
         axios.post(URL, { description })
-            .then(resp => console.log('Funcionou!'))
+            .then(resp => refresh())
     }
+
+    function refresh() {
+        axios.get(`${URL}?sort=-createdAt`)
+            .then(resp => {
+                setList(resp.data)
+                setDescription('')
+            }
+        )
+    }
+
+    useEffect(() => {
+        refresh()
+    }) 
 
     return (
         <div>

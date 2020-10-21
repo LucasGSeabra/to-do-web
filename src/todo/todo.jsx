@@ -16,7 +16,7 @@ function Todo(props) {
 
     function handleAdd() {
         axios.post(URL, { description })
-            .then(resp => refresh())
+            .then(() => refresh())       
     }
 
     function refresh() {
@@ -30,7 +30,7 @@ function Todo(props) {
 
     useEffect(() => {
         refresh()
-    }) 
+    },[]) 
 
     return (
         <div>

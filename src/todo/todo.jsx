@@ -28,6 +28,12 @@ function Todo(props) {
         axios.put(`${URL}/${todo._id}`, {...todo, done: true})
             .then(() => refresh())
     }
+
+    function handlePending(todo) {
+        axios.put(`${URL}/${todo._id}`, {...todo, done: false})
+            .then(() => refresh())
+    }
+
     function refresh() {
         axios.get(`${URL}?sort=-createdAt`)
             .then(resp => {
@@ -49,6 +55,7 @@ function Todo(props) {
                 handleChange={handleChange}
                 handleAdd={handleAdd}
                 handleDone={handleDone}
+                handlePending={handlePending}
             />
             <TodoList 
                 list={list} 

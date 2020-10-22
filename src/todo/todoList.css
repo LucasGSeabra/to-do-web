@@ -1,0 +1,8 @@
+.marked {
+    text-decoration: line-through;
+    color: #777;
+}
+
+Button {
+    margin-right: 5px;
+}

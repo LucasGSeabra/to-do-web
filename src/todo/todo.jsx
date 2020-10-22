@@ -16,35 +16,40 @@ function Todo(props) {
 
     function handleAdd() {
         axios.post(URL, { description })
-            .then(() => refresh())       
+            .then(() => refresh(description))       
     }
 
     function handleDelete(todo) {
         axios.delete(`${URL}/${todo._id}`)
-            .then(() => refresh())       
+            .then(() => refresh(description))       
     }
 
     function handleDone(todo) {
         axios.put(`${URL}/${todo._id}`, {...todo, done: true})
-            .then(() => refresh())
+            .then(() => refresh(description))
     }
 
     function handlePending(todo) {
         axios.put(`${URL}/${todo._id}`, {...todo, done: false})
-            .then(() => refresh())
+            .then(() => refresh(description))
     }
 
-    function refresh() {
-        axios.get(`${URL}?sort=-createdAt`)
+    function handleSearch() {
+        refresh(description)
+    }
+
+    function refresh(description = '') {
+        const search = description ? `&description__regex=/${description}/` : ''
+        axios.get(`${URL}?sort=-createdAt${search}`)
             .then(resp => {
                 setList(resp.data)
-                setDescription('')
+                setDescription(description)
             }
         )
     }
 
     useEffect(() => {
-        refresh()
+        refresh(description)
     },[]) 
 
     return (
@@ -54,11 +59,12 @@ function Todo(props) {
                 description={description} 
                 handleChange={handleChange}
                 handleAdd={handleAdd}
-                handleDone={handleDone}
-                handlePending={handlePending}
+                handleSearch={handleSearch}
             />
             <TodoList 
                 list={list} 
+                handleDone={handleDone}
+                handlePending={handlePending}
                 handleDelete={handleDelete}
             />
         </div>

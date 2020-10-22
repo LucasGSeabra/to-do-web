@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, Col, FormControl, Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus }  from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faSearch }  from '@fortawesome/free-solid-svg-icons'
 
 function TodoForm(props) {
     return (
@@ -18,7 +18,10 @@ function TodoForm(props) {
                 <Col xs={12} md={2} sm={3}>
                     <Button onClick={props.handleAdd} variant="primary">
                         <FontAwesomeIcon icon={faPlus} />
-                    </Button>                 
+                    </Button>      
+                    <Button onClick={props.handleSearch} variant="info">
+                        <FontAwesomeIcon icon={faSearch} />
+                    </Button>              
                 </Col>
             </Row>    
         </form>

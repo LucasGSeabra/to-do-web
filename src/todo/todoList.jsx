@@ -3,6 +3,7 @@ import { Button, Table } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash }  from '@fortawesome/free-solid-svg-icons'
 
+import './todoList.css'
 
 function TodoList(props) {
 

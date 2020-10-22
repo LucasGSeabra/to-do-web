@@ -19,6 +19,11 @@ function Todo(props) {
             .then(() => refresh())       
     }
 
+    function handleDelete(todo) {
+        axios.delete(`${URL}/${todo._id}`)
+            .then(() => refresh())       
+    }
+
     function refresh() {
         axios.get(`${URL}?sort=-createdAt`)
             .then(resp => {
@@ -38,8 +43,12 @@ function Todo(props) {
             <TodoForm 
                 description={description} 
                 handleChange={handleChange}
-                handleAdd={handleAdd}/>
-            <TodoList />
+                handleAdd={handleAdd}
+            />
+            <TodoList 
+                list={list} 
+                handleDelete={handleDelete}
+            />
         </div>
     )
 }

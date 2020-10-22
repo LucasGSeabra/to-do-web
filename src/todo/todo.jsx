@@ -24,6 +24,10 @@ function Todo(props) {
             .then(() => refresh())       
     }
 
+    function handleDone(todo) {
+        axios.put(`${URL}/${todo._id}`, {...todo, done: true})
+            .then(() => refresh())
+    }
     function refresh() {
         axios.get(`${URL}?sort=-createdAt`)
             .then(resp => {
@@ -44,6 +48,7 @@ function Todo(props) {
                 description={description} 
                 handleChange={handleChange}
                 handleAdd={handleAdd}
+                handleDone={handleDone}
             />
             <TodoList 
                 list={list} 

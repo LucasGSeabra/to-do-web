@@ -3,6 +3,7 @@ import { Button, Table } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash }  from '@fortawesome/free-solid-svg-icons'
 
+
 function TodoList(props) {
 
     return (
@@ -19,7 +20,13 @@ function TodoList(props) {
                         <tr key={todo.id}>
                             <td>{todo.description}</td>
                             <td>
-                                <Button onClick={props.handleDelete(todo.id)} variant="danger">
+                                <Button onClick={props.handlePending(todo)} variant="warning">
+                                    <FontAwesomeIcon icon={faTrash} />
+                                </Button> 
+                                <Button onClick={props.handleDone(todo)} variant="success">
+                                    <FontAwesomeIcon icon={faTrash} />
+                                </Button> 
+                                <Button onClick={props.handleDelete(todo)} variant="danger">
                                     <FontAwesomeIcon icon={faTrash} />
                                 </Button> 
                             </td>

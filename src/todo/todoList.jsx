@@ -18,7 +18,9 @@ function TodoList(props) {
                 {props.list.map(todo => {
                     return (
                         <tr key={todo.id}>
-                            <td>{todo.description}</td>
+                            <td className={todo.done ? 'marked' : ''}>
+                                {todo.description}
+                            </td>
                             <td>
                                 <Button onClick={props.handlePending(todo)} variant="warning">
                                     <FontAwesomeIcon icon={faTrash} />

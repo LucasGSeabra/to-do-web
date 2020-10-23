@@ -18,7 +18,7 @@ function TodoList(props) {
             <tbody>
                 {props.list.map(todo => {
                     return (
-                        <tr key={todo.id}>
+                        <tr key={todo._id}>
                             <td className={todo.done ? 'marked' : ''}>
                                 {todo.description}
                             </td>

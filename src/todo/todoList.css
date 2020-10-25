@@ -1,8 +1,16 @@
-.marked {
+.list th {
+    border-top: none !important;
+}
+
+.list .marked {
     text-decoration: line-through;
     color: #777;
 }
 
-Button {
-    margin-right: 5px;
+.list Button {
+    margin-right: 5px !important;
+}
+
+.list .table-actions {
+    width: 12rem !important;
 }

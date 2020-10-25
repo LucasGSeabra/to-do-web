@@ -1,18 +1,18 @@
 import React from 'react'
 import { Button, Table } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash }  from '@fortawesome/free-solid-svg-icons'
+import { faTrash, faRedo, faCheck }  from '@fortawesome/free-solid-svg-icons'
 
 import './todoList.css'
 
 function TodoList(props) {
 
     return (
-        <Table>
+        <Table className="list">
             <thead>
                 <tr>
                     <th>Descricao</th>
-                    <th>Ações</th>
+                    <th className="table-actions">Ações</th>
                 </tr>
             </thead>
             <tbody>

@@ -6,6 +6,12 @@ import { faPlus, faSearch, faTimes }  from '@fortawesome/free-solid-svg-icons'
 import { faPlus, faSearch }  from '@fortawesome/free-solid-svg-icons'
 
 function TodoForm(props) {
+
+    const keyHandler = (e) => {
+        if(e.key === 'Enter') { e.shiftKey ? props.handleSearch(e) : props.handleAdd(e) }
+        if(e.key === 'Escape') {props.handleClear()}
+    }
+
     return (
         <form className="todoForm">
             <Row>
@@ -13,6 +19,7 @@ function TodoForm(props) {
                     <FormControl 
                         value={props.description}
                         onChange={props.handleChange}
+                        onKeyUp={keyHandler}
                         placeholder="Adicione uma tarefa" 
                         id="description"
                     />                 

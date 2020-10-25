@@ -3,7 +3,7 @@ import { Row, Col, FormControl, Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faSearch, faTimes }  from '@fortawesome/free-solid-svg-icons'
 
-import { faPlus, faSearch }  from '@fortawesome/free-solid-svg-icons'
+import './todoForm.css'
 
 function TodoForm(props) {
 

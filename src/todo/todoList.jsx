@@ -23,14 +23,14 @@ function TodoList(props) {
                                 {todo.description}
                             </td>
                             <td>
-                                <Button onClick={props.handlePending(todo)} variant="warning">
+                                <Button onClick={() => props.handlePending(todo)} variant="warning" hidden={!todo.done}>
+                                    <FontAwesomeIcon icon={faRedo} />
+                                </Button> 
+                                <Button onClick={() => props.handleDelete(todo)} variant="danger" hidden={!todo.done}>
                                     <FontAwesomeIcon icon={faTrash} />
                                 </Button> 
-                                <Button onClick={props.handleDone(todo)} variant="success">
-                                    <FontAwesomeIcon icon={faTrash} />
-                                </Button> 
-                                <Button onClick={props.handleDelete(todo)} variant="danger">
-                                    <FontAwesomeIcon icon={faTrash} />
+                                <Button onClick={() => props.handleDone(todo)} variant="success" hidden={todo.done}>
+                                    <FontAwesomeIcon icon={faCheck} />
                                 </Button> 
                             </td>
                         </tr>

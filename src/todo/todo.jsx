@@ -38,6 +38,10 @@ function Todo(props) {
         refresh(description)
     }
 
+    function handleClear() {
+        refresh()
+    }
+
     function refresh(description = '') {
         const search = description ? `&description__regex=/${description}/` : ''
         axios.get(`${URL}?sort=-createdAt${search}`)
@@ -60,6 +64,7 @@ function Todo(props) {
                 handleChange={handleChange}
                 handleAdd={handleAdd}
                 handleSearch={handleSearch}
+                handleClear={handleClear}
             />
             <TodoList 
                 list={list} 

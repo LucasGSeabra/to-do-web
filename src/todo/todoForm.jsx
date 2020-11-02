@@ -1,4 +1,7 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { changeDescription } from './todoAction'
 import { Row, Col, FormControl, Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faSearch, faTimes }  from '@fortawesome/free-solid-svg-icons'
@@ -18,7 +21,7 @@ function TodoForm(props) {
                 <Col xs={12} md={10} sm={9}>
                     <FormControl 
                         value={props.description}
-                        onChange={props.handleChange}
+                        onChange={props.changeDescription}
                         onKeyUp={keyHandler}
                         placeholder="Adicione uma tarefa" 
                         id="description"
@@ -40,4 +43,6 @@ function TodoForm(props) {
     )
 }
 
-export default TodoForm
+const mapStateToProps = state => ({description: state.todo.description})
+const mapDispatchToProps = dispatch => bindActionCreators({ changeDescription}, dispatch)
+export default connect(mapStateToProps, mapDispatchToProps)(TodoForm)

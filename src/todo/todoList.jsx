@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { Button, Table } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faRedo, faCheck }  from '@fortawesome/free-solid-svg-icons'
@@ -41,4 +42,6 @@ function TodoList(props) {
     )
 }
 
-export default TodoList
+const mapStateToProps = state => ({list: state.todo.list})
+
+export default connect(mapStateToProps)(TodoList)

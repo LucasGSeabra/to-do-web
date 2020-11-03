@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
+import promise from 'redux-promise'
+import multi from 'redux-multi'
+import thunk from 'redux-thunk'
 
-import App from './main/App';
+import App from './main/App'
 import reducers from './main/reducers'
 
-const store = createStore(reducers)
+const store = applyMiddleware(promise, multi, thunk)(createStore)(reducers)
 
 ReactDOM.render(
   <React.StrictMode>

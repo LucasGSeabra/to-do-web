@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { changeDescription } from './todoAction'
+import { changeDescription, search, add } from './todoAction'
 import { Row, Col, FormControl, Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faSearch, faTimes }  from '@fortawesome/free-solid-svg-icons'
@@ -14,6 +14,10 @@ function TodoForm(props) {
         if(e.key === 'Enter') { e.shiftKey ? props.handleSearch(e) : props.handleAdd(e) }
         if(e.key === 'Escape') {props.handleClear()}
     }
+
+    useEffect(() => {
+        props.search()
+    }, [])
 
     return (
         <form className="todoForm">
@@ -28,7 +32,7 @@ function TodoForm(props) {
                     />                 
                 </Col>
                 <Col xs={12} md={2} sm={3}>
-                    <Button onClick={props.handleAdd} variant="primary">
+                    <Button onClick={() => props.add(props.description)} variant="primary">
                         <FontAwesomeIcon icon={faPlus} />
                     </Button>      
                     <Button onClick={props.handleSearch} variant="info">
@@ -44,5 +48,5 @@ function TodoForm(props) {
 }
 
 const mapStateToProps = state => ({description: state.todo.description})
-const mapDispatchToProps = dispatch => bindActionCreators({ changeDescription}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ changeDescription, search, add }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(TodoForm)

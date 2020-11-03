@@ -1,5 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { markAsDone, markAsPending } from './todoAction'
 import { Button, Table } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faRedo, faCheck }  from '@fortawesome/free-solid-svg-icons'
@@ -24,13 +26,13 @@ function TodoList(props) {
                                 {todo.description}
                             </td>
                             <td>
-                                <Button onClick={() => props.handlePending(todo)} variant="warning" hidden={!todo.done}>
+                                <Button onClick={() => props.markAsPending(todo)} variant="warning" hidden={!todo.done}>
                                     <FontAwesomeIcon icon={faRedo} />
                                 </Button> 
                                 <Button onClick={() => props.handleDelete(todo)} variant="danger" hidden={!todo.done}>
                                     <FontAwesomeIcon icon={faTrash} />
                                 </Button> 
-                                <Button onClick={() => props.handleDone(todo)} variant="success" hidden={todo.done}>
+                                <Button onClick={() => props.markAsDone(todo)} variant="success" hidden={todo.done}>
                                     <FontAwesomeIcon icon={faCheck} />
                                 </Button> 
                             </td>
@@ -43,5 +45,6 @@ function TodoList(props) {
 }
 
 const mapStateToProps = state => ({list: state.todo.list})
+const mapDispatchToProps = dispatch => bindActionCreators({ markAsDone, markAsPending }, dispatch)
 
-export default connect(mapStateToProps)(TodoList)
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList)

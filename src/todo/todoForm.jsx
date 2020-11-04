@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { changeDescription, search, add } from './todoAction'
+import { changeDescription, search, add, clear } from './todoAction'
 import { Row, Col, FormControl, Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faSearch, faTimes }  from '@fortawesome/free-solid-svg-icons'
@@ -11,8 +11,8 @@ import './todoForm.css'
 function TodoForm(props) {
 
     const keyHandler = (e) => {
-        if(e.key === 'Enter') { e.shiftKey ? props.handleSearch(e) : props.handleAdd(e) }
-        if(e.key === 'Escape') {props.handleClear()}
+        if(e.key === 'Enter') { e.shiftKey ? props.search() : props.add(props.description) }
+        if(e.key === 'Escape') {props.clear()}
     }
 
     useEffect(() => {
@@ -35,10 +35,10 @@ function TodoForm(props) {
                     <Button onClick={() => props.add(props.description)} variant="primary">
                         <FontAwesomeIcon icon={faPlus} />
                     </Button>      
-                    <Button onClick={props.handleSearch} variant="info">
+                    <Button onClick={props.search} variant="info">
                         <FontAwesomeIcon icon={faSearch} />
                     </Button>
-                    <Button onClick={props.handleClear} variant="secondary">
+                    <Button onClick={props.clear} variant="secondary">
                         <FontAwesomeIcon icon={faTimes} />
                     </Button>                
                 </Col>
@@ -48,5 +48,5 @@ function TodoForm(props) {
 }
 
 const mapStateToProps = state => ({description: state.todo.description})
-const mapDispatchToProps = dispatch => bindActionCreators({ changeDescription, search, add }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ changeDescription, search, add, clear }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(TodoForm)

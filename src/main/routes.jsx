@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route } from 'react-router'
+import { Route, Redirect } from 'react-router'
 import { HashRouter } from 'react-router-dom'
 
 import Todo from '../todo/todo'
@@ -10,6 +10,7 @@ function Routes(props) {
         <HashRouter>
             <Route path='/todo' component={Todo} />
             <Route path='/sobre' component={About} />
+            <Redirect from='*' to='/todo' />
         </HashRouter>
     )
 }

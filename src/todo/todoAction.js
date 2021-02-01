@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const URL = 'http://localhost:3003/api/todos'
+const URL = 'https://glacial-castle-07790.herokuapp.com/api/todos'
 
 export const changeDescription = (event) => ({
     type: 'DESCRIPTION_CHANGED',

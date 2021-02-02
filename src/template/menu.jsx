@@ -9,13 +9,13 @@ function Menu(props) {
     return(
             <Nav className="navbar">
                 <Nav.Item  className="navbar-brand">
-                    <Nav.Link className="nav-link nav-title" href="#/">
+                    <Nav.Link className="nav-link nav-title" href="#/todo">
                         <FontAwesomeIcon icon={faCalendarCheck} />
                         <h1>TodoApp</h1>
                     </Nav.Link> 
                 </Nav.Item>
                 <Nav.Item  className="navbar-brand">
-                    <Nav.Link className="nav-link" href="#/">Tarefas</Nav.Link> 
+                    <Nav.Link className="nav-link" href="#/todo">Tarefas</Nav.Link> 
                 </Nav.Item>
                 <Nav.Item  className="navbar-brand">
                     <Nav.Link className="nav-link" href="#/sobre">Sobre</Nav.Link> 

@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/to-do-web/static/css/main.df482300.chunk.css",
+    "main.js": "/to-do-web/static/js/main.b45ea43d.chunk.js",
+    "main.js.map": "/to-do-web/static/js/main.b45ea43d.chunk.js.map",
+    "runtime-main.js": "/to-do-web/static/js/runtime-main.33e462c9.js",
+    "runtime-main.js.map": "/to-do-web/static/js/runtime-main.33e462c9.js.map",
+    "static/css/2.3cf5d70f.chunk.css": "/to-do-web/static/css/2.3cf5d70f.chunk.css",
+    "static/js/2.c9c62c10.chunk.js": "/to-do-web/static/js/2.c9c62c10.chunk.js",
+    "static/js/2.c9c62c10.chunk.js.map": "/to-do-web/static/js/2.c9c62c10.chunk.js.map",
+    "index.html": "/to-do-web/index.html",
+    "precache-manifest.e2fb0ea328380b744ca8fb57a533a824.js": "/to-do-web/precache-manifest.e2fb0ea328380b744ca8fb57a533a824.js",
+    "service-worker.js": "/to-do-web/service-worker.js",
+    "static/css/2.3cf5d70f.chunk.css.map": "/to-do-web/static/css/2.3cf5d70f.chunk.css.map",
+    "static/css/main.df482300.chunk.css.map": "/to-do-web/static/css/main.df482300.chunk.css.map",
+    "static/js/2.c9c62c10.chunk.js.LICENSE.txt": "/to-do-web/static/js/2.c9c62c10.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.33e462c9.js",
+    "static/css/2.3cf5d70f.chunk.css",
+    "static/js/2.c9c62c10.chunk.js",
+    "static/css/main.df482300.chunk.css",
+    "static/js/main.b45ea43d.chunk.js"
+  ]
+}

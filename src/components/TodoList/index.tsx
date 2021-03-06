@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Table } from 'react-bootstrap';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { fetchTodos } from '../../store/todoReducer';
+import TodoItem from '../TodoItem';
 
 import './styles.css';
 
@@ -23,6 +24,9 @@ function TodoList() {
         </tr>
       </thead>
       <tbody>
+        {list.map((todo) => (
+          <TodoItem item={todo} key={todo._id} />
+        ))}
       </tbody>
     </Table>
   );

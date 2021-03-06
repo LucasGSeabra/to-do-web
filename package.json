@@ -2,37 +2,37 @@
   "name": "web-to-do",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://lucasgseabra.github.io/to-do-web/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
-    "@fortawesome/react-fontawesome": "^0.1.11",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@reduxjs/toolkit": "^1.5.0",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.31",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
     "axios": "^0.20.0",
+    "bootstrap": "^4.5.3",
+    "font-awesome": "^4.7.0",
     "react": "^16.14.0",
     "react-bootstrap": "^1.3.0",
     "react-dom": "^16.14.0",
     "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "redux": "^4.0.5",
-    "redux-multi": "^0.1.12",
-    "redux-promise": "^0.6.0",
-    "redux-thunk": "^2.3.0",
-    "bootstrap": "^4.5.3",
-    "font-awesome": "^4.7.0",
-    "react-router": "^5.2.0"
+    "ts-jest": "^26.5.3",
+    "typescript": "^4.2.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "lint": "./node_modules/.bin/eslint src/*.tsx",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "test:watch": "jest --watch",
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [
@@ -45,5 +45,33 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.10.8",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/react-bootstrap": "^0.32.25",
+    "@types/react-redux": "^7.1.16",
+    "@types/react-router": "^5.1.12",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/react-test-renderer": "^17.0.1",
+    "@types/redux-promise": "^0.5.29",
+    "@types/redux-thunk": "^2.1.0",
+    "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "@typescript-eslint/parser": "^4.16.1",
+    "babel-eslint": "^10.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "7.21.5",
+    "eslint-plugin-react-hooks": "2.5.0",
+    "gh-pages": "^3.1.0",
+    "prettier": "^2.2.1",
+    "react-test-renderer": "^17.0.1"
   }
 }

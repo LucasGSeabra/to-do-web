@@ -1,0 +1,7 @@
+.list th {
+    border-top: none !important;
+}
+
+.list .table-actions {
+    width: 12rem !important;
+}

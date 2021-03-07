@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageHeader component should render PageHeader correctly 1`] = `
+<header
+  className="page-header"
+>
+  <h2>
+    Page
+     
+    <small>
+      Header
+    </small>
+  </h2>
+</header>
+`;

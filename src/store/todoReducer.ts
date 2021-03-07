@@ -34,7 +34,7 @@ export const removeTodos = createAsyncThunk('removeTodos', async (parameter: str
 });
 
 export const todoReducer = createSlice({
-  name: 'counter',
+  name: 'todo',
   initialState,
   reducers: {
     descriptionChanged(state, action) {
